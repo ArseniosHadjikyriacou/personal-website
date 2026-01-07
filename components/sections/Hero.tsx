@@ -1,5 +1,6 @@
 import { Button } from '@/components/Button';
-import { ArrowRight, ChevronDown, Github, Linkedin, Twitter, Download } from 'lucide-react';
+import { ArrowRight, ChevronDown, Download } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton';
 import Image from 'next/image';
 
@@ -7,21 +8,24 @@ const skills = [
   'React',
   'Next.js',
   'TypeScript',
-  'Node.js',
-  'GraphQL',
+  'JavaScript',
+  'Python',
+  'FastAPI',
+  'Java',
+  'Spring Framework',
   'PostgreSQL',
   'MongoDB',
-  'Redis',
   'Docker',
-  'AWS',
-  'Vercel',
-  'Tailwind CSS',
-  'Prisma',
-  'Jest',
-  'Cypress',
-  'Figma',
+  'Podman',
   'Git',
-  'GitHub Actions',
+  'Linux',
+  'HTML',
+  'CSS',
+  'NumPy',
+  'Pandas',
+  'Matplotlib',
+  'Ollama',
+  'LaTeX',
 ];
 
 export const Hero = () => {
@@ -102,9 +106,8 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
-                { icon: Github, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Twitter, href: '#' },
+                { icon: FaGithub, href: 'https://github.com/ArseniosHadjikyriacou' },
+                { icon: FaLinkedin, href: 'https://linkedin.com/in/arsenios-hadjikyriacou-0404bb161' },
               ].map((social, idx) => (
                 <a
                   key={idx}

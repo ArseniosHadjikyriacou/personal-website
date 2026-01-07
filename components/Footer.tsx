@@ -1,9 +1,8 @@
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: FaGithub, href: '#', label: 'GitHub' },
+  { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
 ];
 
 const footerLinks = [
@@ -27,7 +26,7 @@ export const Footer = () => {
               AH<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Arsenios Hadjikyriacou. All rights reserved.
+              © {currentYear} All rights reserved.
             </p>
           </div>
 

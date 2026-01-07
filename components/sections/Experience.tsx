@@ -1,29 +1,29 @@
 const experiences = [
   {
-    period: '2024 — Present',
-    role: 'Junior Full Stack Developer',
-    company: 'Tech Company Inc.',
+    period: 'March 2025 — Present',
+    role: 'Full-Stack Web Developer',
+    company: 'DeltaSoft Solutions, Larnaca',
     description:
-      'Developing modern web applications using React and Next.js. Contributing to both frontend and backend development, implementing new features and fixing bugs.',
-    technologies: ['React', 'TypeScript', 'Next.js', 'Node.js'],
+      'Development, deployment and documentation of AI-driven financial reporting web application used by large financial institutions. Design and delivery of training courses (Apache Tomcat, MongoDB) for clients.',
+    technologies: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'JWT', 'Podman'],
     current: true,
   },
   {
-    period: '2023 — 2024',
-    role: 'Frontend Developer Intern',
-    company: 'Digital Solutions Co.',
+    period: 'December 2024 — March 2025',
+    role: 'IT Intern',
+    company: 'The Cyprus Institute, Nicosia',
     description:
-      'Built and maintained React components for web applications. Learned best practices in modern web development and collaborated with senior developers.',
-    technologies: ['React', 'JavaScript', 'CSS', 'Git'],
+      'DiGiNN Project: implementation of pilot projects. Consultations with partner organizations to assess IT needs and requirements.',
+    technologies: ['IT Infrastructure', 'Consulting', 'Project Management'],
     current: false,
   },
   {
-    period: '2023',
-    role: 'Freelance Web Developer',
-    company: 'Self-Employed',
+    period: 'October 2022 — October 2024',
+    role: 'Research Team Member',
+    company: 'ELI-Beamlines Research Centre, Prague',
     description:
-      'Created responsive websites for small businesses and personal projects. Gained experience in full project lifecycle from design to deployment.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'WordPress'],
+      'Member of ELIMAIA team conducting advanced research. Performed hydrodynamic and Particle-In-Cell simulations on HPC clusters. Participated in experiments and experimental activities.',
+    technologies: ['Python', 'HPC', 'Scientific Computing', 'Linux'],
     current: false,
   },
 ];
