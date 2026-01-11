@@ -5,38 +5,21 @@ import Image from 'next/image';
 
 const projects = [
   {
-    title: 'Fintech Dashboard',
+    title: 'Chess Application',
     description:
-      'A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.',
+      'A chess analysis board that also allows users to play against a computer engine.',
     tags: ['React', 'TypeScript', 'Node.js'],
-    link: '#',
-    github: '#',
+    link: 'https://arsenioshadjikyriacou.github.io/chess-project-react/',
+    github: 'https://github.com/ArseniosHadjikyriacou/chess-project-react',
     image: '/projects/project1.png',
   },
   {
-    title: 'E-Commerce Platform',
-    description:
-      'A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.',
-    tags: ['Next.js', 'Stripe', 'PostgreSQL', 'Tailwind'],
+    title: 'AI Assisted Financial Dashboard',
+    description: 'An intelligent report generation tool, helping analysts create better financial reports faster.',
+    tags: ['React', 'LLMs', 'Python', 'FastAPI', 'PostgreSQL'],
     link: '#',
     github: '#',
     image: '/projects/project2.png',
-  },
-  {
-    title: 'AI Writing Assistant',
-    description: 'An intelligent writing tool powered by GPT-4, helping users create better content faster.',
-    tags: ['React', 'OpenAI', 'Python', 'FastAPI'],
-    link: '#',
-    github: '#',
-    image: '/projects/project3.png',
-  },
-  {
-    title: 'Project Management Tool',
-    description: 'A collaborative workspace for teams with real-time updates, task tracking, and integrations.',
-    tags: ['Next.js', 'Socket.io', 'MongoDB', 'Redis'],
-    link: '#',
-    github: '#',
-    image: '/projects/project4.png',
   },
 ];
 
@@ -58,8 +41,7 @@ export const Projects = () => {
             <span className="font-serif italic font-normal text-white"> make an impact.</span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my recent work, from complex web applications to innovative tools that solve real-world
-            problems.
+            A selection of my recent work, from complex web applications to AI tools that solve real-world problems.
           </p>
         </div>
 
@@ -121,12 +103,12 @@ export const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+        {/* <div className="text-center mt-12 animate-fade-in animation-delay-500">
           <AnimatedBorderButton>
             View All Projects
             <ArrowUpRight className="w-5 h-5" />
           </AnimatedBorderButton>
-        </div>
+        </div> */}
       </div>
     </section>
   );
