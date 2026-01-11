@@ -1,9 +1,16 @@
 import { ArrowUpRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-import { AnimatedBorderButton } from '@/components/AnimatedBorderButton';
 import Image from 'next/image';
 
 const projects = [
+  {
+    title: 'AI-Assisted Financial Dashboard',
+    description: 'An intelligent report generation tool, helping analysts create better financial reports faster.',
+    tags: ['React', 'LLMs', 'Python', 'FastAPI', 'PostgreSQL'],
+    link: '#',
+    github: '#',
+    image: '/projects/project2.png',
+  },
   {
     title: 'Chess Application',
     description:
@@ -12,14 +19,6 @@ const projects = [
     link: 'https://arsenioshadjikyriacou.github.io/chess-project-react/',
     github: 'https://github.com/ArseniosHadjikyriacou/chess-project-react',
     image: '/projects/project1.png',
-  },
-  {
-    title: 'AI Assisted Financial Dashboard',
-    description: 'An intelligent report generation tool, helping analysts create better financial reports faster.',
-    tags: ['React', 'LLMs', 'Python', 'FastAPI', 'PostgreSQL'],
-    link: '#',
-    github: '#',
-    image: '/projects/project2.png',
   },
 ];
 

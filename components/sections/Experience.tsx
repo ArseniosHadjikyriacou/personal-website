@@ -10,7 +10,7 @@ const experiences = [
   },
   {
     period: 'December 2024 — March 2025',
-    role: 'IT Intern',
+    role: 'Digital Transformation Intern',
     company: 'The Cyprus Institute, Nicosia',
     description:
       'DiGiNN Project: implementation of pilot projects. Consultations with partner organizations to assess IT needs and requirements.',

@@ -68,7 +68,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineer • React Specialist
+                Software Engineer • AI and React Specialist
               </span>
             </div>
 
@@ -82,7 +82,7 @@ export const Hero = () => {
                 <span className="font-serif italic font-normal text-white">precision.</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Arsenios Hadjikyriacou — a junior full stack developer specializing in React, Next.js, and TypeScript.
+                Hi, I'm Arsenios Hadjikyriacou — a full stack developer specializing in AI, LLMs, React, Next.js, and TypeScript.
                 I build scalable, performant web applications that users love.
               </p>
             </div>
@@ -144,13 +144,13 @@ export const Hero = () => {
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">Available for work</span>
+                    <span className="text-sm font-medium">Available for development</span>
                   </div>
                 </div>
 
                 {/* Stats Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">Junior</div>
+                  <div className="text-2xl font-bold text-primary">Software</div>
                   <div className="text-xs text-muted-foreground">Developer</div>
                 </div>
               </div>

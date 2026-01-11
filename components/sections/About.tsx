@@ -43,7 +43,7 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate junior full stack developer with experience crafting digital products that make a
+                I'm a passionate full stack developer with experience crafting digital products that make a
                 difference. My journey started with a curiosity for how things work on the web, and it has evolved into
                 a deep expertise in modern frontend technologies.
               </p>
