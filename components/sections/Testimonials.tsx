@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const testimonials = [
@@ -37,6 +37,7 @@ const testimonials = [
 
 export const Testimonials = () => {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   const next = () => {
     setActiveIdx((prev) => (prev + 1) % testimonials.length);
@@ -45,6 +46,16 @@ export const Testimonials = () => {
   const previous = () => {
     setActiveIdx((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
+
+  useEffect(() => {
+    if (!isAutoPlay) return;
+
+    const interval = setInterval(() => {
+      next();
+    }, 10000); // Auto-advance every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlay, activeIdx]);
 
   return (
     <section id="testimonials" className="py-32 relative overflow-hidden">
@@ -62,29 +73,48 @@ export const Testimonials = () => {
 
         {/* Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Main Testimonial */}
-            <div className="glass p-8 rounded-3xl md:p-12 glow-border animate-fade-in animation-delay-200">
-              <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                <Quote className="w-6 h-6 text-primary-foreground" />
-              </div>
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsAutoPlay(false)}
+            onMouseLeave={() => setIsAutoPlay(true)}
+          >
+            {/* Carousel Container */}
+            <div className="overflow-hidden pt-6">
+              <div
+                className="flex transition-transform duration-700 ease-out"
+                style={{ transform: `translateX(-${activeIdx * 100}%)` }}
+              >
+                {testimonials.map((testimonial, idx) => (
+                  <div
+                    key={idx}
+                    className="min-w-full"
+                  >
+                    {/* Main Testimonial */}
+                    <div className="glass p-8 rounded-3xl md:p-12 glow-border">
+                      <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                        <Quote className="w-6 h-6 text-primary-foreground" />
+                      </div>
 
-              <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
-                "{testimonials[activeIdx].quote}"
-              </blockquote>
+                      <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
+                        "{testimonial.quote}"
+                      </blockquote>
 
-              <div className="flex items-center gap-4">
-                <Image
-                  src={testimonials[activeIdx].avatar}
-                  alt={testimonials[activeIdx].author}
-                  width={56}
-                  height={56}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
-                />
-                <div>
-                  <div className="font-semibold">{testimonials[activeIdx].author}</div>
-                  <div className="text-sm text-muted-foreground">{testimonials[activeIdx].role}</div>
-                </div>
+                      <div className="flex items-center gap-4">
+                        <Image
+                          src={testimonial.avatar}
+                          alt={testimonial.author}
+                          width={56}
+                          height={56}
+                          className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
+                        />
+                        <div>
+                          <div className="font-semibold">{testimonial.author}</div>
+                          <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 

@@ -1,6 +1,9 @@
-import { ArrowUpRight } from 'lucide-react';
+'use client';
+
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const projects = [
   {
@@ -23,6 +26,31 @@ const projects = [
 ];
 
 export const Projects = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  useEffect(() => {
+    if (!isAutoPlay) return;
+
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 10000); // Auto-advance every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlay, currentIndex]);
+
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
       {/* Bg glows */}
@@ -44,61 +72,103 @@ export const Projects = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
+        {/* Carousel Container */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Carousel */}
+          <div 
+            className="relative overflow-hidden rounded-2xl"
+            onMouseEnter={() => setIsAutoPlay(false)}
+            onMouseLeave={() => setIsAutoPlay(true)}
+          >
             <div
-              key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
+              {projects.map((project, idx) => (
+                <div
+                  key={idx}
+                  className="min-w-full"
+                >
+                  <div className="group glass rounded-2xl overflow-hidden">
+                    {/* Image */}
+                    <div className="relative overflow-hidden aspect-video">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
 
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <FaGithub className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
+                      {/* Overlay Links */}
+                      <div className="absolute top-4 right-4 flex items-center gap-3 z-10">
+                        <a
+                          href={project.link}
+                          className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                        >
+                          <ArrowUpRight className="w-5 h-5" />
+                        </a>
+                        <a
+                          href={project.github}
+                          className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                        >
+                          <FaGithub className="w-5 h-5" />
+                        </a>
+                      </div>
+                    </div>
 
-              {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
-                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    {/* Content */}
+                    <div className="p-8 space-y-4">
+                      <h3 className="text-2xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
+                      <p className="text-muted-foreground">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, tagIdx) => (
+                          <span
+                            key={tagIdx}
+                            className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-muted-foreground text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIdx) => (
-                    <span
-                      key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 z-10"
+            aria-label="Previous project"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 z-10"
+            aria-label="Next project"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {projects.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => goToSlide(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentIndex
+                    ? 'w-8 bg-primary'
+                    : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                }`}
+                aria-label={`Go to project ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* View All CTA */}
