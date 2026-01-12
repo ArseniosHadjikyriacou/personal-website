@@ -48,7 +48,7 @@ export const About = () => {
                 a deep expertise in modern frontend technologies.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building everything from sleek landing pages to complex
+                I specialize in AI, LLMs, React, Next.js, and TypeScript, building everything from sleek landing pages to complex
                 web applications. My approach combines technical excellence with a keen eye for design and user
                 experience.
               </p>

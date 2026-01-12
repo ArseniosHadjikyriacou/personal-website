@@ -76,7 +76,7 @@ export const Projects = () => {
         <div className="relative max-w-4xl mx-auto">
           {/* Carousel */}
           <div 
-            className="relative overflow-hidden rounded-2xl"
+            className="overflow-hidden rounded-2xl"
             onMouseEnter={() => setIsAutoPlay(false)}
             onMouseLeave={() => setIsAutoPlay(true)}
           >
@@ -138,36 +138,38 @@ export const Projects = () => {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 z-10"
-            aria-label="Previous project"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 z-10"
-            aria-label="Next project"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+          {/* Navigation Controls */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={prevSlide}
+              className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+              aria-label="Previous project"
+            >
+              <ChevronLeft />
+            </button>
 
-          {/* Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
-            {projects.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => goToSlide(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentIndex
-                    ? 'w-8 bg-primary'
-                    : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
-                aria-label={`Go to project ${idx + 1}`}
-              />
-            ))}
+            <div className="flex gap-2">
+              {projects.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => goToSlide(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === currentIndex
+                      ? 'w-8 bg-primary'
+                      : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                  aria-label={`Go to project ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextSlide}
+              className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+              aria-label="Next project"
+            >
+              <ChevronRight />
+            </button>
           </div>
         </div>
 
