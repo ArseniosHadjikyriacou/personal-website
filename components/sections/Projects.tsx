@@ -7,21 +7,21 @@ import { useState, useEffect } from 'react';
 
 const projects = [
   {
-    title: 'AI-Assisted Financial Dashboard',
-    description: 'An intelligent report generation tool, helping analysts create better financial reports faster.',
-    tags: ['React', 'LLMs', 'Python', 'FastAPI', 'PostgreSQL'],
-    link: '#',
-    github: '#',
-    image: '/projects/project2.png',
+    title: 'Fintech Dashboard',
+    description: 'An intelligent report generation tool, helping analysts create better financial reports faster using AI.',
+    tags: ['LLMs', 'FastAPI', 'Podman'],
+    link: '#projects',
+    github: '#projects',
+    image: '/projects/project1.png',
   },
   {
     title: 'Chess Application',
     description:
-      'A chess analysis board that also allows users to play against a computer engine.',
-    tags: ['React', 'TypeScript', 'Node.js'],
+      'A chess app that also allows users to play a computer engine. Coming soon... accounts, game history.',
+    tags: ['React', 'TypeScript', 'Vite'],
     link: 'https://arsenioshadjikyriacou.github.io/chess-project-react/',
     github: 'https://github.com/ArseniosHadjikyriacou/chess-project-react',
-    image: '/projects/project1.png',
+    image: '/projects/project2.png',
   },
 ];
 
