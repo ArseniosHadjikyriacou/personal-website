@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://arsenioshadjikyriacou.com'),
   title: "Arsenios Hadjikyriacou - Full Stack Developer Portfolio",
   description: "Portfolio of a full stack developer specializing in React, Next.js, TypeScript and AI technologies. View my projects, skills, and experience.",
 };
