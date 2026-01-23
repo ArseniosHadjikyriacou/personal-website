@@ -7,31 +7,10 @@ import Image from 'next/image';
 const testimonials = [
   {
     quote:
-      "Working with this developer was exceptional. The attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: 'Sarah Chen',
-    role: 'CTO, Tech Innovators Inc.',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
-  },
-  {
-    quote:
-      "A game-changer for our project. Delivered ahead of schedule with code quality that set a new standard for our team.",
-    author: 'Michael Rodriguez',
-    role: 'Product Manager, Digital Solutions',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop',
-  },
-  {
-    quote:
-      "The expertise in React and TypeScript helped us rebuild our entire frontend in record time. Architectural decisions continue to pay dividends.",
-    author: 'Emily Watson',
-    role: 'Engineering Lead, StartUp Labs',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-  },
-  {
-    quote:
-      "Not only technically brilliant, but also a fantastic communicator and team player. Elevated everyone around them.",
-    author: 'David Kim',
-    role: 'CEO, Innovation Hub',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
+      "Working with Arsenios was a genuine pleasure, as he is an exceptional problem-solver. He exceeded all my expectations during his internship at the Digital Innovation Hub of Cyprus. He operated at the level of a seasoned developer—quickly understanding project needs, adapting seamlessly to the tech stack, and delivering a polished front-end solution far ahead of schedule. His adaptability across technologies, creativity, and strong delivery skills make him an outstanding developer.",
+    author: 'Dr. Panayiota Katsamba',
+    role: 'Lecturer, Department of Chemical Engineering, Cyprus University of Technology',
+    avatar: '/testimonials/testimonial1.jpeg',
   },
 ];
 
