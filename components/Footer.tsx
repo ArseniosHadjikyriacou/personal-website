@@ -1,8 +1,8 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const socialLinks = [
-  { icon: FaGithub, href: '#', label: 'GitHub' },
-  { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+  { icon: FaGithub, href: 'https://github.com/ArseniosHadjikyriacou', label: 'GitHub' },
+  { icon: FaLinkedin, href: 'https://linkedin.com/in/arsenios-hadjikyriacou-0404bb161', label: 'LinkedIn' },
 ];
 
 const footerLinks = [
