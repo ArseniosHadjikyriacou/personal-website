@@ -6,26 +6,11 @@ import Image from 'next/image';
 
 const skills = [
   'React',
-  'Next.js',
-  'TypeScript',
-  'JavaScript',
-  'Python',
   'FastAPI',
-  'Java',
-  'Spring Framework',
+  'ASP.NET',
+  'Spring Boot',
   'PostgreSQL',
-  'MongoDB',
   'Docker',
-  'Podman',
-  'Git',
-  'Linux',
-  'HTML',
-  'CSS',
-  'NumPy',
-  'Pandas',
-  'Matplotlib',
-  'Ollama',
-  'LaTeX',
 ];
 
 export const Hero = () => {
@@ -82,7 +67,7 @@ export const Hero = () => {
                 <span className="font-serif italic font-normal text-white">precision.</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Arsenios Hadjikyriacou — a full stack developer specializing in AI, LLMs, React, Next.js, and TypeScript.
+                Hi, I'm Arsenios Hadjikyriacou — a full stack developer specializing in AI, LLMs, React and REST APIs.
                 I build scalable, performant web applications that users love.
               </p>
             </div>
