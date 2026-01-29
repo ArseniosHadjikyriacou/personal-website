@@ -5,12 +5,13 @@ import { AnimatedBorderButton } from '@/components/AnimatedBorderButton';
 import Image from 'next/image';
 
 const skills = [
+  '.NET',
   'React',
-  'FastAPI',
-  'ASP.NET',
-  'Spring Boot',
-  'PostgreSQL',
   'Docker',
+  'FastAPI',
+  'MongoDB',
+  'PostgreSQL',
+  'Spring Boot',
 ];
 
 export const Hero = () => {
