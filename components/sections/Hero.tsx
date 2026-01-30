@@ -4,14 +4,25 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton';
 import Image from 'next/image';
 
-const skills = [
-  '.NET',
-  'React',
-  'Docker',
-  'FastAPI',
-  'MongoDB',
-  'PostgreSQL',
-  'Spring Boot',
+const skillsRow1 = [
+  { name: 'TypeScript', logo: '/logos/typescript.svg' },
+  { name: 'Python', logo: '/logos/python.svg' },
+  { name: 'Java', logo: '/logos/java.svg' },
+  { name: 'C#', logo: '/logos/csharp.svg' },
+  { name: 'React', logo: '/logos/react.svg' },
+  { name: 'Next.js', logo: '/logos/next.svg' },
+  { name: 'Tailwind', logo: '/logos/tailwind.svg' },
+];
+
+const skillsRow2 = [
+  { name: 'FastAPI', logo: '/logos/fastapi.svg' },
+  { name: 'Spring', logo: '/logos/spring.png' },
+  { name: '.NET', logo: '/logos/dotnet.png' },
+  { name: 'PostgreSQL', logo: '/logos/postgres.svg' },
+  { name: 'MongoDB', logo: '/logos/mongodb.svg' },
+  { name: 'Docker', logo: '/logos/docker.svg' },
+  { name: 'Podman', logo: '/logos/podman.svg' },
+  { name: 'Kubernetes', logo: '/logos/kubernetes.png' },
 ];
 
 export const Hero = () => {
@@ -147,15 +158,38 @@ export const Hero = () => {
         {/* Skills Section */}
         <div className="mt-20 animate-fade-in animation-delay-600">
           <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I work with</p>
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden max-w-3xl lg:max-w-4xl mx-auto">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-background to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-background to-transparent z-10" />
-            <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                    {skill}
-                  </span>
+            
+            {/* Row 1 */}
+            <div className="flex w-max animate-marquee">
+              {[...skillsRow1, ...skillsRow1].map((skill, idx) => (
+                <div key={idx} className="shrink-0 px-4 sm:px-6 md:px-8 py-2 md:py-4 flex items-center justify-center">
+                  <Image
+                    src={skill.logo}
+                    alt={skill.name}
+                    width={48}
+                    height={48}
+                    className="h-8 sm:h-9 md:h-10 w-auto opacity-50 hover:opacity-100 transition-opacity duration-300"
+                    title={skill.name}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Row 2 - animates in reverse */}
+            <div className="flex w-max animate-marquee-reverse">
+              {[...skillsRow2, ...skillsRow2].map((skill, idx) => (
+                <div key={idx} className="shrink-0 px-4 sm:px-6 md:px-8 py-2 md:py-4 flex items-center justify-center">
+                  <Image
+                    src={skill.logo}
+                    alt={skill.name}
+                    width={48}
+                    height={48}
+                    className="h-8 sm:h-9 md:h-10 w-auto opacity-50 hover:opacity-100 transition-opacity duration-300"
+                    title={skill.name}
+                  />
                 </div>
               ))}
             </div>
@@ -163,7 +197,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800 z-10">
         <a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
@@ -172,6 +206,7 @@ export const Hero = () => {
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </a>
       </div>
+
     </section>
   );
 };
