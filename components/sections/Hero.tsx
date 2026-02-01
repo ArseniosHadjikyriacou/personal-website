@@ -1,5 +1,5 @@
 import { Button } from '@/components/Button';
-import { ArrowRight, ChevronDown, Download } from 'lucide-react';
+import { Mail, ChevronDown, FileSymlink } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton';
 import Image from 'next/image';
@@ -88,13 +88,14 @@ export const Hero = () => {
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
               <a href="#contact">
                 <Button size="lg">
-                  Contact Me <ArrowRight className="w-5 h-5" />
+                  <span className="text-xl font-semibold">Contact Me</span>
+                  <Mail className="w-8 h-8" />
                 </Button>
               </a>
-              <a href="/CV.pdf" download="Arsenios_Hadjikyriacou_CV.pdf">
+              <a href="/CV.pdf" target="_blank" rel="noopener noreferrer">
                 <AnimatedBorderButton>
-                  <Download className="w-5 h-5" />
-                  Download CV
+                  <FileSymlink className="w-8 h-8" /> 
+                  <span className="text-xl font-semibold"> View CV</span>
                 </AnimatedBorderButton>
               </a>
             </div>
