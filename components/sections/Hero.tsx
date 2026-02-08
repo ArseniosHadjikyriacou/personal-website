@@ -20,6 +20,7 @@ const skillsRow2 = [
   { name: '.NET', logo: '/logos/dotnet.png' },
   { name: 'PostgreSQL', logo: '/logos/postgres.svg' },
   { name: 'MongoDB', logo: '/logos/mongodb.svg' },
+  { name: 'Nginx', logo: '/logos/nginx.png' },
   { name: 'Docker', logo: '/logos/docker.svg' },
   { name: 'Podman', logo: '/logos/podman.svg' },
   { name: 'Kubernetes', logo: '/logos/kubernetes.png' },
