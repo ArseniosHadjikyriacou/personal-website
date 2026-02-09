@@ -15,13 +15,21 @@ const projects = [
     image: '/projects/project1.png',
   },
   {
+    title: 'Learning Platform',
+    description: 'An AI-powered learning platform that adapts to individual needs. In development, stay tuned for updates.',
+    tags: ['LLMs', 'Spring Boot', 'Docker'],
+    link: '#projects',
+    github: '#projects',
+    image: '/projects/project2.png',
+  },
+  {
     title: 'Chess Application',
     description:
       'A chess app that also allows users to play a computer engine. Coming soon... accounts, game history.',
     tags: ['React', 'TypeScript', 'Vite'],
     link: 'https://arsenioshadjikyriacou.github.io/chess-project-react/',
     github: 'https://github.com/ArseniosHadjikyriacou/chess-project-react',
-    image: '/projects/project2.png',
+    image: '/projects/project3.png',
   },
 ];
 
@@ -98,7 +106,7 @@ export const Projects = () => {
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
+                      <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60" />
 
                       {/* Overlay Links */}
                       <div className="absolute top-4 right-4 flex items-center gap-3 z-10">
