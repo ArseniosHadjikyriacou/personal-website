@@ -12,6 +12,13 @@ const testimonials = [
     role: 'Lecturer, Department of Chemical Engineering, Cyprus University of Technology',
     avatar: '/testimonials/testimonial1.jpeg',
   },
+    {
+    quote:
+      "I had the pleasure of mentoring Arsenios in React and core software development fundamentals, and I was consistently impressed by his rapid growth and dedication. Arsenios is an exceptionally fast learner who quickly built a solid understanding of React and modern development practices. Beyond technical ability, he demonstrated genuine curiosity and a strong passion for software engineering, always eager to dive deeper and improve. He successfully contributed to both research and industry projects, delivering reliable results and collaborating effectively. I am confident that Arsenios will be a valuable asset to any development team and will continue to excel as a software engineer.",
+    author: 'Stelios Voskos',
+    role: 'Lead Front-End Developer, Datatech I.T. Solutions Ltd',
+    avatar: '/testimonials/testimonial2.png',
+  },
 ];
 
 export const Testimonials = () => {
